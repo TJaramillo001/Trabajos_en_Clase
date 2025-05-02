@@ -16,10 +16,10 @@
   <!-- <TextField fx:id-->
   <TextField fx:id="nameTextF" />
   <Label text = "Codigo: "></Label>
-  <TextField fx:id="codeTextF" />
+  <TextField fx:id="idTextF" />
 
   <Label text = "Edad: "></Label>
-  <TextField fx:id="yearsTextF"/>
+  <TextField fx:id="ageTextF"/>
 
   <!-- <Button onAction="#onRegisterStudent"/> -->
   <Button text="Agregar Estudiante" onAction="#onRegisterStudent"/>

@@ -2,13 +2,13 @@ package org.icesi.javafx.model;
 
 public class Student {
     private String name;
-    private String code;
-    private int years;
+    private String id;
+    private int age;
 
-    public Student(String name, String code, int years) {
+    public Student(String name, String id, int age) {
         this.name = name;
-        this.code = code;
-        this.years = years;
+        this.id = id;
+        this.age = age;
     }
 
     public String getName() {
@@ -19,19 +19,19 @@ public class Student {
         this.name = name;
     }
 
-    public String getCode() {
-        return code;
+    public String getId() {
+        return id;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public int getYears() {
-        return years;
+    public int getAge() {
+        return age;
     }
 
-    public void setYears(int years) {
-        this.years = years;
+    public void setAge(int age) {
+        this.age = age;
     }
 }

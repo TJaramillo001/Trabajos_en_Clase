@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.icesi.javafx.HelloApplication;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,10 +17,10 @@ public class RegisterController implements Initializable {
     private TextField nameTextF;
 
     @FXML
-    private TextField codeTextF;
+    private TextField idTextF;
 
     @FXML
-    private TextField yearsTextF;
+    private TextField ageTextF;
 
     private StudentController controller;
 
@@ -28,11 +29,11 @@ public class RegisterController implements Initializable {
 
     public void onRegisterStudent(javafx.event.ActionEvent actionEvent){
         String name = nameTextF.getText();
-        String code = codeTextF.getText();
+        String code = idTextF.getText();
         int years = 0;
 
         try {
-            years = Integer.parseInt(yearsTextF.getText());
+            years = Integer.parseInt(ageTextF.getText());
             controller.addStudent(name, code, years);
 
         } catch (NumberFormatException e){
@@ -42,17 +43,16 @@ public class RegisterController implements Initializable {
             alert.showAndWait();
         }
 
+        HelloApplication.onWindowOpen("list-students-view.fxml");
 
 
-
-        String msg = "Lista de Usuarios \n" + controller.printStudents();
-
-        listStudentsLabel.setText(msg);
+        //String msg = "Lista de Usuarios \n" + controller.printStudents();
+        //listStudentsLabel.setText(msg);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //en este metodo inicializamos todos los elementos de codigos necesarios antes de mostrar una interfaz grafica
-        controller = new StudentController();
+        controller = StudentController.getInstance();
     }
 }
